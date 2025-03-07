@@ -25,9 +25,11 @@
   },
   "devDependencies": {
     "husky": "^9.1.7",
+    "jest": "^29.7.0",
     "lint-staged": "^15.2.0",
     "nodemon": "^3.1.7",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "supertest": "^6.3.3"
   },
   "lint-staged": {
     "src/**/*.js": [
@@ -43,6 +45,9 @@
     "lint": "prettier --check \"src/**/*.js\" \"src/**/*.css\"",
     "prettier:write": "prettier --write \"src/**/*.js\" \"src/**/*.css\"",
     "postinstall": "cp node_modules/prismjs/themes/*.css src/static/css/prismjs",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   }
 }

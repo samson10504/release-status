@@ -54,6 +54,11 @@ app.use((req, res) => {
   res.redirect('/');
 });
 
-const server = app.listen(process.env.PORT || 8080, () => {
-  console.log('Electron release history listening', `http://localhost:${server.address().port}`);
-});
+if (process.env.NODE_ENV !== 'test') {
+  const server = app.listen(process.env.PORT || 8080, () => {
+    console.log('Electron release history listening', `http://localhost:${server.address().port}`);
+  });
+  module.exports = server;
+} else {
+  module.exports = app;
+}
