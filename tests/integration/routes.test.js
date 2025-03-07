@@ -45,7 +45,7 @@ describe('Route Integration Tests', () => {
       .expect('Content-Type', /html/)
       .expect(200);
     
-    expect(res.text).toContain('Electron Release History');
+    expect(res.text).toContain('Electron Releases');
   });
   
   it('should serve the releases.json endpoint', async () => {
